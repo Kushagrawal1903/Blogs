@@ -1,0 +1,34 @@
+---
+title: "NetScan"
+slug: "NetScan"
+overview: "A network security monitoring tool that uses machine learning to detect anomalous traffic patterns and potential intrusions in real-time."
+techStack: ["Python", "Scikit-learn", "Scapy", "FastAPI", "React", "PostgreSQL", "Docker"]
+githubUrl: "https://github.com/kushagrawal/NetScan"
+coverImage: "/images/projects/NetScan.jpg"
+featured: true
+status: "active"
+---
+
+## Overview
+
+NetScan is an intelligent network security monitoring platform that combines traditional signature-based detection with machine learning anomaly detection to identify threats that conventional IDS systems miss.
+
+## Architecture
+
+- **Packet Capture:** Scapy for deep packet inspection
+- **ML Pipeline:** Scikit-learn models trained on NSL-KDD dataset
+- **API:** FastAPI for real-time threat feed
+- **Dashboard:** React-based monitoring interface
+- **Storage:** PostgreSQL with TimescaleDB for time-series data
+
+## Key Features
+
+- Real-time packet capture and analysis
+- ML-based anomaly detection (Random Forest + Isolation Forest)
+- Automated alert generation with severity scoring
+- Historical traffic pattern visualization
+- Integration with common SIEM platforms
+
+## Lessons Learned
+
+Security tools need to balance sensitivity with false positive rates. Too many alerts and operators suffer from alert fatigue. We achieved a 94% detection rate with only a 2% false positive rate by combining multiple detection methods.

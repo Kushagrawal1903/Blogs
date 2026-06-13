@@ -1,0 +1,45 @@
+---
+title: "GoTrip"
+slug: "gotrip"
+overview: "An AI-powered travel planning platform that generates personalized itineraries using machine learning and real-time data from multiple travel APIs."
+techStack: ["Next.js", "TypeScript", "Python", "FastAPI", "OpenAI", "PostgreSQL", "Redis", "Tailwind CSS"]
+githubUrl: "https://github.com/kushagrawal/gotrip"
+liveUrl: "https://gotrip.kushagrawal.in"
+coverImage: "/images/projects/gotrip.jpg"
+featured: true
+status: "active"
+---
+
+## Overview
+
+GoTrip reimagines travel planning by combining AI-generated itineraries with real-time data from flights, hotels, and activities APIs. Users describe their ideal trip, and GoTrip creates a complete, day-by-day plan tailored to their preferences, budget, and travel style.
+
+## The Problem
+
+Planning a trip typically requires hours of research across multiple platforms. GoTrip consolidates this into a single, intelligent experience.
+
+## Architecture
+
+The platform uses a microservices architecture:
+
+- **Frontend:** Next.js with TypeScript for a responsive, fast UI
+- **AI Engine:** Python FastAPI service using OpenAI for itinerary generation
+- **Data Layer:** PostgreSQL for persistence, Redis for caching API responses
+- **Integrations:** Amadeus API (flights), Booking.com API (hotels), Google Places API (activities)
+
+## Key Features
+
+- Natural language trip description
+- AI-generated day-by-day itineraries
+- Real-time pricing from travel APIs
+- Collaborative trip planning
+- Export to calendar and PDF
+- Budget optimization suggestions
+
+## Challenges
+
+The biggest challenge was balancing AI creativity with practical constraints. An AI might suggest visiting three cities in one day — we needed constraint systems to ensure itineraries were actually feasible.
+
+## Lessons Learned
+
+Building GoTrip taught me that the best AI products don't just generate content — they understand context. Travel planning requires understanding geography, time zones, transit times, and personal preferences simultaneously.

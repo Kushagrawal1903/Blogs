@@ -1,0 +1,453 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ===========================
+   DESIGN SYSTEM TOKENS
+   Digital Minimalism Theme
+   =========================== */
+
+@theme {
+  /* Color System */
+  --color-bg-primary: #FEFEFE;
+  --color-bg-secondary: #EBEBE7;
+  --color-surface: #F7F7F5;
+  --color-surface-hover: #F0F0EC;
+  --color-text-primary: #111111;
+  --color-text-secondary: #5F6368;
+  --color-text-muted: #9CA0A5;
+  --color-accent: #828475;
+  --color-accent-hover: #6E7066;
+  --color-accent-light: #CAC5B7;
+  --color-border: #E5E5E0;
+  --color-code-bg: #F4F4F0;
+  --color-success: #4A7C59;
+  --color-error: #C45D5D;
+  --color-white: #FFFFFF;
+  --color-black: #111111;
+
+  /* Typography Scale (reduced by ~15-20%, preserving hierarchy and readability) */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-xs: 0.725rem;
+  /* ~3% reduction - kept highly readable for metadata */
+  --text-sm: 0.8125rem;
+  /* ~7% reduction */
+  --text-base: 0.925rem;
+  /* ~7.5% reduction - body text */
+  --text-lg: 1rem;
+  /* ~11% reduction */
+  --text-xl: 1.125rem;
+  /* ~10% reduction */
+  --text-2xl: 1.375rem;
+  /* ~15.4% reduction */
+  --text-3xl: 1.75rem;
+  /* ~17.6% reduction */
+  --text-4xl: 2.25rem;
+  /* ~18.2% reduction */
+  --text-5xl: 3rem;
+  /* ~20% reduction */
+
+  /* Spacing (reduced by 20-25% for a denser layout) */
+  --spacing-section: 3.75rem;
+  --spacing-section-sm: 2.5rem;
+
+  /* Layout */
+  --container-max: 1536px;
+  /* increased from 1440px to improve space utilization */
+  --container-content: 1400px;
+  /* increased from 1280px */
+  --container-article: 720px;
+  /* comfortable reading width */
+  --container-margin: 32px;
+  --container-gutter: 20px;
+
+  /* Radius (reduced by ~20% to look sharper with tighter margins) */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0px 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0px 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0px 16px 48px rgba(0, 0, 0, 0.08);
+
+  /* Animation */
+  --ease-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+}
+
+/* ===========================
+   BASE STYLES
+   =========================== */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+/* View Transitions */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(page) {
+  animation: fade-out var(--duration-normal) var(--ease-default);
+}
+
+::view-transition-new(page) {
+  animation: fade-in var(--duration-normal) var(--ease-default);
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===========================
+   TYPOGRAPHY
+   =========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+/* Display typography */
+.display-xl {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+/* ===========================
+   SELECTION
+   =========================== */
+
+::selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-text-primary);
+}
+
+/* ===========================
+   SCROLLBAR
+   =========================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-light);
+}
+
+/* ===========================
+   FOCUS STYLES (A11y)
+   =========================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ===========================
+   PROSE / ARTICLE CONTENT
+   =========================== */
+
+.prose-editorial {
+  font-size: 1rem;
+  /* reduced from 1.125rem (~11% reduction) */
+  line-height: 1.75;
+  max-width: var(--container-article);
+  color: var(--color-text-primary);
+}
+
+.prose-editorial h2 {
+  font-size: var(--text-xl);
+  margin-top: 1.5rem;
+  /* reduced from 2rem */
+  margin-bottom: 0.5rem;
+  /* reduced from 0.75rem */
+  font-weight: 600;
+}
+
+.prose-editorial h3 {
+  font-size: var(--text-lg);
+  margin-top: 1.25rem;
+  /* reduced from 1.75rem */
+  margin-bottom: 0.375rem;
+  /* reduced from 0.5rem */
+  font-weight: 600;
+}
+
+.prose-editorial p {
+  margin-bottom: 1rem;
+  /* reduced from 1.25rem */
+  color: var(--color-text-secondary);
+}
+
+.prose-editorial a {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.prose-editorial a:hover {
+  color: var(--color-text-primary);
+}
+
+.prose-editorial blockquote {
+  border-left: 3px solid var(--color-accent-light);
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin: 1rem 0;
+  /* reduced from 1.5rem */
+}
+
+.prose-editorial code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+.prose-editorial pre {
+  background: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  padding: 1rem;
+  /* reduced from 1.25rem */
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: 1rem 0;
+  /* reduced from 1.5rem */
+  font-size: 0.8125rem;
+  /* reduced from 0.875rem */
+  line-height: 1.6;
+}
+
+.prose-editorial pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prose-editorial img {
+  border-radius: var(--radius-lg);
+  margin: 1.25rem 0;
+  /* reduced from 1.5rem */
+}
+
+.prose-editorial ul,
+.prose-editorial ol {
+  margin: 1rem 0;
+  /* reduced from 1.25rem */
+  padding-left: 1.25rem;
+}
+
+.prose-editorial li {
+  margin-bottom: 0.25rem;
+  /* reduced from 0.375rem */
+  color: var(--color-text-secondary);
+}
+
+.prose-editorial hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 1.5rem 0;
+  /* reduced from 2rem */
+}
+
+.prose-editorial table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  /* reduced from 1.5rem */
+}
+
+.prose-editorial th,
+.prose-editorial td {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  /* reduced from 0.625rem 0.875rem */
+  text-align: left;
+}
+
+.prose-editorial th {
+  background: var(--color-surface);
+  font-weight: 600;
+}
+
+/* ===========================
+   REDUCED MOTION
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===========================
+   RESPONSIVE TYPOGRAPHY
+   =========================== */
+
+@media (max-width: 1024px) {
+  .display-xl {
+    font-size: 2.625rem;
+  }
+
+  .display {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .display-xl {
+    font-size: 2.0rem;
+  }
+
+  .display {
+    font-size: 1.625rem;
+  }
+
+  h1 {
+    font-size: var(--text-lg);
+  }
+
+  h2 {
+    font-size: var(--text-md);
+  }
+
+  .prose-editorial {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 375px) {
+  .display-xl {
+    font-size: 1.75rem;
+  }
+
+  .display {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===========================
+   READING PROGRESS BAR
+   =========================== */
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--color-accent);
+  z-index: 100;
+  transition: width 100ms linear;
+}
+
+/* ===========================
+   KNOWLEDGE GRAPH
+   =========================== */
+
+.knowledge-graph-node {
+  cursor: pointer;
+  transition: transform var(--duration-normal) var(--ease-default);
+}
+
+.knowledge-graph-node:hover {
+  transform: scale(1.1);
+}
+
+.knowledge-graph-link {
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+  transition: stroke var(--duration-normal) var(--ease-default);
+}
+
+.knowledge-graph-link.active {
+  stroke: var(--color-accent);
+  stroke-width: 2.5;
+}
