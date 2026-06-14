@@ -2,16 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container, Section } from "@/components/layout/container";
 
 const books = [
   {
-    slug: "the-developers-playbook",
-    title: "The Developer's Playbook",
-    description: "A comprehensive guide to building a career in software development.",
+    slug: "computer-architecture",
+    title: "Computer Architecture and Organization",
+    description: "A comprehensive guide to understanding computer systems, architecture, and low-level programming.",
     color: "#828475",
     year: "2026",
+    coverImage: "/images/books/computer-architecture.jpeg"
   },
 ];
 
@@ -58,17 +60,27 @@ export function BooksSection() {
                   <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/10" />
 
                   {/* Cover content */}
-                  <div className="relative z-10 flex flex-col justify-between h-full p-4 pl-6 text-white">
-                    <div>
-                      <p className="text-[10px] opacity-60 uppercase tracking-wider">{book.year}</p>
+                  {book.coverImage ? (
+                    <Image
+                      src={book.coverImage}
+                      alt={book.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 150px, 170px"
+                    />
+                  ) : (
+                    <div className="relative z-10 flex flex-col justify-between h-full p-4 pl-6 text-white">
+                      <div>
+                        <p className="text-[10px] opacity-60 uppercase tracking-wider">{book.year}</p>
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-display font-semibold leading-tight">
+                          {book.title}
+                        </h3>
+                        <p className="text-[10px] opacity-60 mt-1.5">Kush Agrawal</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-sm font-display font-semibold leading-tight">
-                        {book.title}
-                      </h3>
-                      <p className="text-[10px] opacity-60 mt-1.5">Kush Agrawal</p>
-                    </div>
-                  </div>
+                  )}
 
                   {/* Sheen effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
