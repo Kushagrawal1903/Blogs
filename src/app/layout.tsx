@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kushagrawal.in"),
   title: {
-    default: "Kush Agrawal — Developer, Analyst, Writer",
+    default: "Blogs | Kush Agrawal",
     template: "%s | Kush Agrawal",
   },
   description:
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://kushagrawal.in",
-    title: "Kush Agrawal — Developer, Analyst, Writer",
+    title: "Blogs | Kush Agrawal",
     description:
       "Building things, analyzing data, and sharing ideas.",
     siteName: "Kush Agrawal",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kush Agrawal — Developer, Analyst, Writer",
+    title: "Blogs | Kush Agrawal",
     description:
       "Building things, analyzing data, and sharing ideas.",
     creator: "@kushagrawal",

@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "Kush Agrawal",
-  title: "Kush Agrawal — Developer, Analyst, Writer",
+  title: "Blogs | Kush Agrawal",
   description:
     "Building things, analyzing data, and sharing ideas. A personal knowledge platform exploring software development, data analytics, cybersecurity, and writing.",
   url: "https://kushagrawal.in",
-  ogImage: "https://kushagrawal.in/api/og",
+  ogImage: "/images/blog/hi.png",
   author: {
     name: "Kush Agrawal",
     email: "hello@kushagrawal.in",
@@ -12,8 +12,8 @@ export const siteConfig = {
     bio: "I build software, analyze data, explore cybersecurity, and write about it all.",
   },
   links: {
-    github: "https://github.com/kushagrawal",
-    linkedin: "https://linkedin.com/in/kushagrawal",
+    github: "https://github.com/Kushagrawal1903",
+    linkedin: "https://www.linkedin.com/in/kush-agrawal-491ba2286/",
     twitter: "https://twitter.com/kushagrawal",
   },
   nav: [
