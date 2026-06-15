@@ -117,9 +117,35 @@ export function Footer() {
           <p className="text-sm text-text-muted">
             © {currentYear} Kush Agrawal. All rights reserved.
           </p>
-          <p className="text-sm text-text-muted">
-            Built with ❤️ by Kush Agrawal
-          </p>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <Link
+              href="/privacy-policy"
+              className="text-xs text-text-muted hover:text-text-primary transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-text-muted/30">|</span>
+            <Link
+              href="/terms-and-conditions"
+              className="text-xs text-text-muted hover:text-text-primary transition-colors"
+            >
+              Terms & Conditions
+            </Link>
+            <span className="text-text-muted/30">|</span>
+            <Link
+              href="/sitemap.xml"
+              className="text-xs text-text-muted hover:text-text-primary transition-colors"
+            >
+              Sitemap
+            </Link>
+            <span className="text-text-muted/30">|</span>
+            <Link
+              href="/rss.xml"
+              className="text-xs text-text-muted hover:text-text-primary transition-colors"
+            >
+              RSS
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

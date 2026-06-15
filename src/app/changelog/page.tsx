@@ -5,11 +5,11 @@ import type { ChangelogEntry } from "@/types";
 
 export const metadata: Metadata = {
   title: "Changelog",
-  description: "A log of updates, improvements, and fixes to kushagrawal.in.",
+  description: "A log of updates, improvements, and fixes to blog.kushagrawal.in.",
 };
 
 const changelog: ChangelogEntry[] = [
-  { date: "2026-06-04", title: "Website Launch", description: "Initial launch of kushagrawal.in — a personal knowledge platform with blog, projects, books, knowledge graph, and full-site search.", type: "feature" },
+  { date: "2026-06-04", title: "Website Launch", description: "Initial launch of blog.kushagrawal.in , a personal knowledge platform with blog, projects, books, knowledge graph, and full-site search.", type: "feature" },
   { date: "2026-06-04", title: "Knowledge Graph", description: "Added interactive knowledge graph as a flagship feature to visualize connections between topics.", type: "feature" },
   { date: "2026-06-04", title: "CMD+K Search", description: "Implemented full-site search with keyboard navigation and instant results.", type: "feature" },
   { date: "2026-06-04", title: "Dynamic OG Images", description: "Added dynamic Open Graph image generation for all pages using Next.js ImageResponse.", type: "improvement" },

@@ -12,7 +12,7 @@ const categories = [
     icon: Laptop,
     title: "Hardware",
     items: [
-      { name: "MacBook Pro 14\"", detail: "M3 Pro, 18GB RAM — Primary development machine" },
+      { name: "MacBook Pro 14\"", detail: "M3 Pro, 18GB RAM , Primary development machine" },
       { name: "Dell UltraSharp 27\"", detail: "4K monitor for focused work sessions" },
       { name: "Keychron K2", detail: "Mechanical keyboard with brown switches" },
       { name: "Logitech MX Master 3S", detail: "Precision mouse for long coding sessions" },

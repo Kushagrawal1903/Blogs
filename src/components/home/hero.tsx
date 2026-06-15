@@ -11,7 +11,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-bg-primary">
       <Container className="py-14 md:py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left — Copy */}
+          {/* Left , Copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right — Editorial Visual */}
+          {/* Right , Editorial Visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

@@ -4,7 +4,7 @@ import { SearchPageClient } from "@/components/shared/search-page-client";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search across all articles, projects, and books on kushagrawal.in.",
+  description: "Search across all articles, projects, and books on blog.kushagrawal.in.",
 };
 
 export default function SearchPage() {

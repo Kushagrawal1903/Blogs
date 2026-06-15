@@ -17,7 +17,7 @@ export function Notebook() {
         <line x1="73" y1="4" x2="73" y2="91" stroke="rgba(0,0,0,0.04)" strokeWidth="0.5" />
         <line x1="77" y1="4" x2="77" y2="91" stroke="rgba(0,0,0,0.04)" strokeWidth="0.5" />
 
-        {/* Left page — ruled lines */}
+        {/* Left page , ruled lines */}
         {Array.from({ length: 9 }, (_, i) => (
           <line
             key={`rule-${i}`}
@@ -30,14 +30,14 @@ export function Notebook() {
           />
         ))}
 
-        {/* Left page — handwritten-style text marks */}
+        {/* Left page , handwritten-style text marks */}
         <line x1="14" y1="18" x2="42" y2="18" stroke="rgba(80,70,55,0.25)" strokeWidth="0.8" strokeLinecap="round" />
         <line x1="14" y1="26" x2="56" y2="26" stroke="rgba(80,70,55,0.2)" strokeWidth="0.6" strokeLinecap="round" />
         <line x1="14" y1="34" x2="48" y2="34" stroke="rgba(80,70,55,0.2)" strokeWidth="0.6" strokeLinecap="round" />
         <line x1="14" y1="42" x2="38" y2="42" stroke="rgba(80,70,55,0.18)" strokeWidth="0.6" strokeLinecap="round" />
         <line x1="14" y1="50" x2="52" y2="50" stroke="rgba(80,70,55,0.2)" strokeWidth="0.6" strokeLinecap="round" />
 
-        {/* Right page — architecture sketch */}
+        {/* Right page , architecture sketch */}
         {/* Flowchart boxes */}
         <rect x="88" y="16" width="20" height="10" rx="2" fill="none" stroke="rgba(80,70,55,0.25)" strokeWidth="0.6" />
         <rect x="96" y="36" width="20" height="10" rx="2" fill="none" stroke="rgba(80,70,55,0.25)" strokeWidth="0.6" />

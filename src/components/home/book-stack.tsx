@@ -2,7 +2,7 @@
 
 /**
  * SVG stack of 4 books with realistic spine text.
- * Rich, dark tones — navy, forest green, burgundy, charcoal.
+ * Rich, dark tones , navy, forest green, burgundy, charcoal.
  */
 export function BookStack() {
   const books = [
@@ -15,7 +15,7 @@ export function BookStack() {
   return (
     <div className="relative w-[130px] md:w-[145px] lg:w-[160px]">
       <svg viewBox="0 0 140 90" className="w-full h-auto drop-shadow-[0_6px_20px_rgba(0,0,0,0.12)]">
-        {/* Books stacked — bottom to top */}
+        {/* Books stacked , bottom to top */}
         {books.map((book, i) => {
           const y = 68 - i * 17;
           return (

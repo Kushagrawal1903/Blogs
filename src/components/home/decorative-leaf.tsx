@@ -39,7 +39,7 @@ export function DecorativeLeaf() {
           strokeLinecap="round"
         />
 
-        {/* Leaf 1 — large, right */}
+        {/* Leaf 1 , large, right */}
         <path
           d="M38,52 Q55,40 62,28 Q58,48 38,52"
           fill="url(#leaf1)"
@@ -47,7 +47,7 @@ export function DecorativeLeaf() {
         />
         <path d="M38,52 Q52,42 58,32" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="0.5" />
 
-        {/* Leaf 2 — medium, left */}
+        {/* Leaf 2 , medium, left */}
         <path
           d="M40,42 Q22,30 18,18 Q24,36 40,42"
           fill="url(#leaf2)"
@@ -55,14 +55,14 @@ export function DecorativeLeaf() {
         />
         <path d="M40,42 Q28,32 22,22" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.4" />
 
-        {/* Leaf 3 — small, top right */}
+        {/* Leaf 3 , small, top right */}
         <path
           d="M42,25 Q54,15 56,6 Q50,18 42,25"
           fill="url(#leaf3)"
           opacity="0.8"
         />
 
-        {/* Leaf 4 — small, top left */}
+        {/* Leaf 4 , small, top left */}
         <path
           d="M38,28 Q26,18 20,12 Q28,22 38,28"
           fill="url(#leaf1)"

@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
             >
               K
             </div>
-            <span style={{ fontSize: "18px", color: "#5F6368" }}>kushagrawal.in</span>
+            <span style={{ fontSize: "18px", color: "#5F6368" }}>blog.kushagrawal.in</span>
           </div>
           <div
             style={{

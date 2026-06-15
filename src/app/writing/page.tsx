@@ -24,7 +24,7 @@ export default function WritingPage() {
     <Container>
       <PageHeader
         title="Writing"
-        description="A curated index of everything I've written — articles, guides, tutorials, and notes organized by topic."
+        description="A curated index of everything I've written , articles, guides, tutorials, and notes organized by topic."
         breadcrumbs={[{ label: "Writing", href: "/writing" }]}
       />
 

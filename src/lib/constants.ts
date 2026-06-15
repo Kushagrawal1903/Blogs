@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Blogs | Kush Agrawal",
   description:
     "Building things, analyzing data, and sharing ideas. A personal knowledge platform exploring software development, data analytics, cybersecurity, and writing.",
-  url: "https://kushagrawal.in",
+  url: "https://blog.kushagrawal.in",
   ogImage: "/images/blog/hi.png",
   author: {
     name: "Kush Agrawal",

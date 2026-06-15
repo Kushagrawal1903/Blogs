@@ -13,7 +13,7 @@ export function NewsletterSection() {
           </p>
           <h2 className="display text-text-primary">Stay in the loop</h2>
           <p className="mt-3 text-sm text-text-secondary">
-            Join 1,000+ readers. Get weekly articles on development, data analytics, cybersecurity, and more — delivered straight to your inbox.
+            Join 1,000+ readers. Get weekly articles on development, data analytics, cybersecurity, and more , delivered straight to your inbox.
           </p>
           <div className="mt-6 max-w-md mx-auto">
             <NewsletterForm variant="hero" />

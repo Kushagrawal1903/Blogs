@@ -6,17 +6,44 @@ import { NewsletterForm } from "@/components/shared/newsletter-form";
 import { getAllPosts, getReadingStats } from "@/lib/content";
 import { formatDate } from "@/lib/utils";
 
+import { getPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/constants";
+
 export const metadata: Metadata = {
   title: "Blog",
   description: "Articles on software development, data analytics, cybersecurity, and writing.",
+  ...getPageMetadata("blog"),
 };
 
 export default function BlogPage() {
   const posts = getAllPosts();
   const stats = getReadingStats();
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteConfig.url
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": `${siteConfig.url}/blog`
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Container>
         <PageHeader
           title="Blog"

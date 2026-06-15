@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { formatDate, cn } from "@/lib/utils";
 import type { BlogPost } from "@/types";
+import { AuthorBox } from "@/components/blog/author-box";
 
 export function ArticleContent({ post }: { post: BlogPost }) {
   const [progress, setProgress] = useState(0);
@@ -66,46 +67,52 @@ export function ArticleContent({ post }: { post: BlogPost }) {
 
           {/* Text Overlaid at the bottom */}
           <div className="relative z-10 p-4 sm:p-6 md:p-10 w-full">
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
-                  <Link
-                    href="/blog"
-                    className="inline-flex items-center gap-1.5 text-[11px] md:text-sm text-white/85 hover:text-white transition-colors"
-                  >
-                    <ArrowLeft className="w-3 h-3 md:w-3.5 md:h-3.5" />
-                    Back to Blog
-                  </Link>
-                  <div className="w-1 h-1 rounded-full bg-white/30" />
-                  <span className="text-[9px] md:text-xs font-bold text-white uppercase tracking-wider bg-accent px-2 md:px-2.5 py-0.5 rounded-full">
-                    {post.category.replace("-", " ")}
-                  </span>
-                </div>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="flex items-center gap-3 mb-3 md:mb-4">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-1.5 text-[11px] md:text-sm text-white/85 hover:text-white transition-colors"
+                >
+                  <ArrowLeft className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  Back to Blog
+                </Link>
+                <div className="w-1 h-1 rounded-full bg-white/30" />
+                <span className="text-[9px] md:text-xs font-bold text-white uppercase tracking-wider bg-accent px-2 md:px-2.5 py-0.5 rounded-full">
+                  {post.category.replace("-", " ")}
+                </span>
+              </div>
 
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] font-display font-bold leading-tight text-white drop-shadow-md">
-                  {post.title}
-                </h1>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] font-display font-bold leading-tight text-white drop-shadow-md">
+                {post.title}
+              </h1>
 
-                <div className="mt-3 md:mt-5 flex flex-wrap items-center gap-3 md:gap-4 text-[11px] md:text-sm text-white/80">
-                  <span className="font-medium flex items-center gap-1.5 md:gap-2 text-white">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center border text-[10px] md:text-xs bg-white/15 border-white/20">
-                      {post.author.charAt(0)}
-                    </div>
-                    {post.author}
-                  </span>
-                  <span className="flex items-center gap-1 md:gap-1.5">
+              <div className="mt-3 md:mt-5 flex flex-wrap items-center gap-3 md:gap-4 text-[11px] md:text-sm text-white/80">
+                <span className="font-medium flex items-center gap-1.5 md:gap-2 text-white">
+                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center border text-[10px] md:text-xs bg-white/15 border-white/20">
+                    {post.author.charAt(0)}
+                  </div>
+                  {post.author}
+                </span>
+                <span className="flex items-center gap-1 md:gap-1.5">
+                  <Calendar className="w-3 h-3 md:w-3.5 md:h-3.5 text-white/60" />
+                  Published: {formatDate(post.publishedAt)}
+                </span>
+                {post.updatedAt && post.updatedAt !== post.publishedAt && (
+                  <span className="flex items-center gap-1 md:gap-1.5 px-2 py-0.5 bg-white/10 rounded text-white font-medium text-[10px] md:text-xs">
                     <Calendar className="w-3 h-3 md:w-3.5 md:h-3.5 text-white/60" />
-                    {formatDate(post.publishedAt)}
+                    Updated: {formatDate(post.updatedAt)}
                   </span>
-                  <span className="flex items-center gap-1 md:gap-1.5">
-                    <Clock className="w-3 h-3 md:w-3.5 md:h-3.5 text-white/60" />
-                    {post.readingTime} min read
-                  </span>
-                </div>
-              </motion.div>
+                )}
+                <span className="flex items-center gap-1 md:gap-1.5">
+                  <Clock className="w-3 h-3 md:w-3.5 md:h-3.5 text-white/60" />
+                  {post.readingTime} min read
+                </span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </Container>
@@ -113,7 +120,7 @@ export function ArticleContent({ post }: { post: BlogPost }) {
       {/* Article Body with TOC */}
       <Container className="py-6 md:py-8 px-4 md:px-6">
         <div className="flex gap-8 lg:gap-10 max-w-[1100px] mx-auto">
-          {/* TOC Sidebar — desktop only */}
+          {/* TOC Sidebar , desktop only */}
           {headings.length > 0 && (
             <aside className="hidden lg:block shrink-0 w-44">
               <div className="sticky top-20">
@@ -170,6 +177,9 @@ export function ArticleContent({ post }: { post: BlogPost }) {
                   .replace(/\n{2,}/g, "\n"),
               }}
             />
+            <div className="max-w-[700px] mx-auto lg:ml-0 lg:mr-auto mt-8 border-t border-border pt-2">
+              <AuthorBox />
+            </div>
           </div>
         </div>
       </Container>

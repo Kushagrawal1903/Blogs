@@ -12,8 +12,8 @@ const sections = [
     icon: Briefcase,
     title: "Building",
     items: [
-      "GoTrip — AI-powered travel planning platform",
-      "This personal knowledge platform (kushagrawal.in)",
+      "GoTrip , AI-powered travel planning platform",
+      "This personal knowledge platform (blog.kushagrawal.in)",
       "A cybersecurity monitoring tool using ML anomaly detection",
     ],
   },
@@ -31,7 +31,7 @@ const sections = [
     icon: Zap,
     title: "Focusing On",
     items: [
-      "Building a consistent writing habit — publishing weekly",
+      "Building a consistent writing habit , publishing weekly",
       "Contributing to open-source security tools",
       "Growing the newsletter to 1,000 subscribers",
       "Preparing for placement season",

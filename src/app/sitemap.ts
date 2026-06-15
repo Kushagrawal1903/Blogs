@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, getAllProjects, getAllBooks } from "@/lib/content";
+import { siteConfig } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://kushagrawal.in";
+  const baseUrl = siteConfig.url;
 
   const staticPages = [
     "", "/blog", "/projects", "/books", "/about", "/contact",
     "/uses", "/now", "/writing", "/resources", "/changelog",
     "/newsletter", "/knowledge-graph", "/search",
+    "/privacy-policy", "/terms-and-conditions",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

@@ -7,7 +7,7 @@
 export function DeskLamp() {
   return (
     <div className="relative w-[80px] md:w-[90px] lg:w-[100px]">
-      {/* Light cone glow — extends beyond the lamp */}
+      {/* Light cone glow , extends beyond the lamp */}
       <div
         className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[200px] h-[180px] pointer-events-none"
         style={{
@@ -34,10 +34,10 @@ export function DeskLamp() {
         <ellipse cx="40" cy="106" rx="18" ry="4" fill="#2d2d2d" />
         <rect x="36" y="100" width="8" height="6" rx="1" fill="url(#lampMetal)" />
 
-        {/* Arm — vertical */}
+        {/* Arm , vertical */}
         <rect x="38" y="42" width="4" height="60" rx="2" fill="url(#lampMetal)" />
 
-        {/* Arm — angled */}
+        {/* Arm , angled */}
         <rect
           x="38"
           y="30"
