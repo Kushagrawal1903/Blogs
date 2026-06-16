@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { SearchModal } from "@/components/shared/search-modal";
+import { PortfolioBadge } from "@/components/shared/portfolio-badge";
 import Script from "next/script";
 import { siteConfig } from "@/lib/constants";
 import "./globals.css";
@@ -165,6 +166,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <PortfolioBadge />
         <SearchModal />
       </body>
     </html>
