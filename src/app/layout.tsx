@@ -6,6 +6,7 @@ import { SearchModal } from "@/components/shared/search-modal";
 import { PortfolioBadge } from "@/components/shared/portfolio-badge";
 import Script from "next/script";
 import { siteConfig } from "@/lib/constants";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -168,6 +169,7 @@ export default function RootLayout({
         <Footer />
         <PortfolioBadge />
         <SearchModal />
+        <Analytics />
       </body>
     </html>
   );
